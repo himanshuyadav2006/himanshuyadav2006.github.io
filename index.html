@@ -3,229 +3,294 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Himanshu Yadav - Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <title>PropEase – Smart Property Deals</title>
   <style>
     :root {
-      --primary: #00bcd4;
-      --secondary: #1a1a1a;
-      --bg-light: #f0f0f0;
-      --text-light: #fff;
-      --accent: #673ab7;
+      --primary: #1e88e5;
+      --accent: #ff5722;
+      --bg: #f9f9f9;
+      --text: #333;
+      --white: #fff;
+      --highlight: #ffcc00;
     }
 
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
+      font-family: 'Segoe UI', sans-serif;
     }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--bg-light);
-      color: var(--secondary);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    nav {
-      background-color: var(--secondary);
+    header {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1rem 2rem;
       display: flex;
-      justify-content: center;
-      padding: 15px 0;
+      justify-content: space-between;
+      align-items: center;
       position: sticky;
       top: 0;
       z-index: 1000;
     }
 
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+
+    .developer-info {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-left: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
     nav a {
-      color: var(--text-light);
+      color: var(--white);
       text-decoration: none;
-      margin: 0 20px;
-      font-weight: 600;
-      position: relative;
+      font-weight: 500;
       transition: color 0.3s ease;
     }
 
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 3px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-      position: absolute;
-      bottom: -5px;
-      left: 0;
+    nav a:hover {
+      color: var(--accent);
     }
 
-    nav a:hover {
+    .special-offer {
+      background-color: var(--highlight);
+      color: var(--primary);
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .hero {
+      background: linear-gradient(to right, rgba(30,136,229,0.8), rgba(30,136,229,0.6)),
+                  url('https://images.unsplash.com/photo-1560185127-6ed189bf05f3?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color: var(--white);
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero .search-box {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .hero input {
+      padding: 0.9rem;
+      width: 300px;
+      max-width: 80%;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .hero button {
+      padding: 0.9rem 1.5rem;
+      background: var(--accent);
+      border: none;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    section.properties {
+      padding: 3rem 2rem;
+      background: var(--white);
+    }
+
+    section.properties h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      width: 300px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 1rem;
+    }
+
+    .info h3 {
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
       color: var(--primary);
     }
 
-    nav a:hover::after {
-      width: 100%;
-    }
-
-    header {
-      background: linear-gradient(135deg, #00bcd4, #673ab7);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h2 {
-      text-align: center;
-      color: var(--accent);
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-    }
-
-    section p, section li {
-      font-size: 1.1rem;
-      line-height: 1.7;
-    }
-
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .projects ul li,
-    .skills ul li {
-      background-color: white;
-      margin: 10px 0;
-      padding: 12px 18px;
-      border-left: 5px solid var(--primary);
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-info li {
-      margin: 12px 0;
-    }
-
-    .contact-info a {
-      color: var(--secondary);
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    .contact-info a:hover {
-      color: var(--accent);
+    .info p {
+      color: #666;
+      font-size: 0.95rem;
     }
 
     footer {
-      background-color: var(--secondary);
-      color: var(--text-light);
       text-align: center;
-      padding: 20px;
-      margin-top: 40px;
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      margin-top: 3rem;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 600px) {
-      nav a {
-        margin: 0 10px;
-        font-size: 0.9rem;
-      }
-
-      header h1 {
+    @media (max-width: 768px) {
+      .hero h1 {
         font-size: 2rem;
-      }
-
-      section h2 {
-        font-size: 1.6rem;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#projects">Projects</a>
-  <a href="#skills">Skills</a>
-  <a href="#education">Education</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- Header -->
+  <header>
+    <div class="logo">🏡 PropEase</div>
+    <div class="developer-info">by Himanshu Yadav</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Buy</a></li>
+        <li><a href="#">Rent</a></li>
+        <li><a href="#">List</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<!-- Header Section -->
-<header>
-  <h1>Himanshu Yadav</h1>
-  <p>Web Developer | Designer | Tech Enthusiast</p>
-</header>
+  <!-- Special Offer Section -->
+  <div class="special-offer">
+    🚨 **Limited Time Offer!** Get best deals on all properties listed this month! 🚨
+  </div>
 
-<!-- About Section -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hi! I'm <strong>Himanshu Yadav</strong>, a passionate web developer who enjoys crafting clean and efficient digital experiences. With a keen eye for design and strong technical skills, I specialize in building responsive and modern websites that offer real-world value.<br>
-With a strong foundation in front-end technologies, I craft websites and web applications that are not only functional but also thoughtfully designed. My work bridges performance with aesthetics, ensuring every project delivers both impact and reliability.From responsive design to scalable architecture, I thrive on turning complex challenges into seamless solutions. I’m always learning, always building, and always ready to take on the next challenge in the ever-evolving world of tech.</p>
-</section>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Find Your Dream place</h1>
+    <p>Browse thousands of listings across cities and neighborhoods.</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Enter city or zip code..." />
+      <button onclick="searchProperty()">Search</button>
+    </div>
+  </section>
 
-<!-- Projects Section -->
-<section id="projects" class="projects">
-  <h2>Projects</h2>
-  <ul>
-    <li><strong>Portfolio Website</strong> – A fully responsive personal site using HTML, CSS & JS.</li>
-    <li><strong>Task Tracker App</strong> – A React app to manage tasks with Firebase integration.</li>
-    <li><strong>Weather Now</strong> – A weather dashboard using OpenWeatherMap API and Vanilla JS.</li>
-  </ul>
-</section>
+  <!-- Featured Properties -->
+  <section class="properties">
+    <h2>Featured Listings</h2>
+    <div class="card-container">
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c?auto=format&fit=crop&w=800&q=60" alt="Lakeview Villa, LA" />
+        <div class="info">
+          <h3>Lakeview Villa, LA</h3>
+          <p>$1,250,000 · 4 Bed · 3 Bath</p>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=60" alt="Downtown Apartment, NYC" />
+        <div class="info">
+          <h3>Downtown Apartment, NYC</h3>
+          <p>$890,000 · 2 Bed · 2 Bath</p>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1565182999561-18d7dc61d6d2?auto=format&fit=crop&w=800&q=60" alt="Modern Condo, Chicago" />
+        <div class="info">
+          <h3>Modern Condo, Chicago</h3>
+          <p>$560,000 · 3 Bed · 2 Bath</p>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1599423300746-b62533397364?auto=format&fit=crop&w=800&q=60" alt="Luxury Home, Miami" />
+        <div class="info">
+          <h3>Luxury Home, Miami</h3>
+          <p>$1,800,000 · 5 Bed · 4 Bath</p>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600607682059-90d8ad5f964e?auto=format&fit=crop&w=800&q=60" alt="Suburban House, Texas" />
+        <div class="info">
+          <h3>Suburban House, Texas</h3>
+          <p>$420,000 · 3 Bed · 2 Bath</p>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348223?auto=format&fit=crop&w=800&q=60" alt="City Loft, San Francisco" />
+        <div class="info">
+          <h3>City Loft, San Francisco</h3>
+          <p>$950,000 · 2 Bed · 1 Bath</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- Skills Section -->
-<section id="skills" class="skills">
-  <h2>My Skills</h2>
-  <ul>
-    <li>HTML5, CSS3, JavaScript (ES6+)</li>
-    <li>React.js, Node.js, Firebase</li>
-    <li>Git, GitHub, VS Code</li>
-    <li>Responsive Design & UI/UX Principles</li>
-  </ul>
-</section>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 PropEase. All rights reserved. | Developed by <strong>Himanshu Yadav</strong></p>
+  </footer>
 
-<!-- Education Section -->
-<section id="education" class="education">
-  <h2>Education</h2>
-  <ul>
-    <li><strong>B.Tech</strong> in <strong>Artificial Intelligence and Machine Learning</strong></li>
-    <li><strong>Dronacharya College of Engineering,Gurugram</strong></li>
-    <li>2025-Present</li>
-    <p>Currently pursuing a degree in AIML, with a focus on integrating AI technologies with web development to create intelligent applications.</p>
-  </ul>
-</section>
-
-<!-- Contact Section -->
-<section id="contact">
-  <h2>Contact</h2>
-  <ul class="contact-info">
-    <li><strong>Phone:</strong> <a href="tel:+9999654363">+91 9999654363</a></li>
-    <li><strong>Email:</strong> <a href="mailto:himanshuyadav0453@gmail.com">himanshuyadav0453@gmail.com</a></li>
-    <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/Himanshu Yadav" target="_blank">linkedin.com/in/Himanshu Yadav</a></li>
-    <li><strong>Instagram:</strong> <a href="https://instagram.com/__yadavhimanshu__" target="_blank">instagram.com/__yadavhimanshu__</a></li>
-    <li><strong>Telegram:</strong> <a href="https://t.me/himanshuyadav27278" target="_blank">t.me/himanshuyadav27278</a></li>
-  </ul>
-</section>
-
-<!-- Footer -->
-<footer>
-  <p>&copy; 2025 Himanshu Yadav | All rights reserved.</p>
-</footer>
-
+  <!-- JavaScript -->
+  <script>
+    function searchProperty() {
+      const input = document.getElementById('searchInput').value;
+      if (input.trim() !== "") {
+        alert("Searching for properties in: " + input);
+      } else {
+        alert("Please enter a location.");
+      }
+    }
+  </script>
 </body>
 </html>
